@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, jsonify
 
 obj = Flask(__name__)
 
@@ -14,13 +14,13 @@ def math_operator():
     number2 = request.json["number2"]
 
     if operation == 'add':
-        result = number1 + number2
+        result = int(number1) + int(number2)
     elif operation == 'mul':
-        result = number1 * number2
+        result = int(number1) * int(number2)
     elif operation == 'div':
-        result = number1 / number2
+        result = int(number1) / int(number2)
     else:
-        result = number1 - number2
+        result = int(number1) - int(number2)
     return result
 
 
