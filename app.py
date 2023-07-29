@@ -1,13 +1,31 @@
 from flask import Flask, render_template
 
-app = Flask(__name__)
+obj = Flask(__name__)
 
-@app.route('/')
+@obj.route('/')
 def welcome():
     return "Welcome to the Flask!"
+
+
+@obj.route('/cal', methods=['GET'])
+def math_operator():
+    operation = request.json["operation"]
+    number1 = request.json["number1"]
+    number2 = request.json["number2"]
+
+    if operation == 'add':
+        result = number1 + number2
+    elif operation == 'mul':
+        result = number1 * number2
+    elif operation == 'div':
+        result = number1 / number2
+    else:
+        result = number1 - number2
+    return result
+
 
 
 print(__name__)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    obj.run(debug=True)
