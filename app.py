@@ -21,7 +21,8 @@ def math_operator():
         result = int(number1) / int(number2)
     else:
         result = int(number1) - int(number2)
-    return jsonify(result)
+    #return jsonify(result)
+    return "the operation is {}, and result is {}".format(operation, result)
 
 
 
