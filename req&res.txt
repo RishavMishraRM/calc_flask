@@ -1,0 +1,13 @@
+Endpoint : http://127.0.0.1:5000/cal
+
+Request :
+
+{
+    "operation" : "add",
+    "number1" : 110,
+    "number2" : 120
+}
+
+Response :
+
+the operation is add, and result is 230
